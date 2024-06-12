@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help | Gear Trade Hub</title>
+    <link rel="stylesheet" href="help.css"> <!-- Include the external CSS file -->
+</head>
+<body>
+
+
+    <header>
+        <div class="logo-container">
+            <a href="index.php">
+                <img src="images/WhatsApp_Image_2023-09-17_at_2.41.26_PM-removebg-preview.png" alt="Company Logo">
+            </a>
+        </div>
+        <h1>How can We be of assistance?</h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="account.php">Account</a></li>
+                <li><a href="chat.php">Chats</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="scrollToTop" class="scroll-to-top">&#8593;</div>
+
+    <section id="contact">
+        <div class="left-section">
+            <h2>Contact Customer Care</h2>
+            <p>If you have any questions or need assistance, feel free to reach out to us through the following channels:</p>
+
+            <ul>
+                <li>WhatsApp: <a href="https://wa.me/1234567890">Click to Chat on WhatsApp</a></li>
+                <li>Instagram: <a href="https://www.instagram.com/geartradehub/">@geartradehub</a></li>
+                <li>Facebook: <a href="https://www.facebook.com/geartradehub">Gear Trade Hub</a></li>
+                <li>Twitter: <a href="https://twitter.com/geartradehub">@geartradehub</a></li>
+            </ul>
+        </div>
+
+        <div class="right-section">
+            <h3>Send us an Email</h3>
+            <form action="send_email.php" method="post">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Send Email</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () 
+        {
+            const scrollToTopButton = document.getElementById('scrollToTop');
+
+            // SHOW/HIDE SCROLL TO TOP BUTTON
+            window.addEventListener('scroll', function ()
+            {
+                console.log('Scrolling...');
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) 
+                {
+                    scrollToTopButton.style.display = 'block';
+                } 
+                else 
+                {
+                    scrollToTopButton.style.display = 'none';
+                }
+            });
+
+            // SCROLL TO THE TOP ON CLICK
+            scrollToTopButton.addEventListener('click', function () 
+            {
+                document.body.scrollTop = 0; // SAFARI BROWSER
+                document.documentElement.scrollTop = 0; //OTHER BROWSERS
+            });
+        });
+    </script>
+</body>
+</html>

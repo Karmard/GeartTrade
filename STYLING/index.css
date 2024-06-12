@@ -1,0 +1,260 @@
+body 
+        {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: hsl(0, 0%, 96%);
+            margin: 0;
+        }
+
+header 
+        {
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+.logo-container img 
+        {
+            max-width: 80px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+header h1 
+        {
+            background-image:url("../images/header back.avif");
+            text-align: center;
+            background-size: cover;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+h1 
+        {
+            margin: 0;
+            font-size: 24px;
+            
+        }
+
+.header-content 
+        {
+            display: flex;
+            align-items: center;
+        }
+
+.search-bar 
+        {
+            display: flex;
+            align-items: center;
+        }
+
+.search-bar input 
+        {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 40px;
+        }
+
+.search-bar button 
+        {
+            padding: 10px 15px;
+            background-color: red;
+            color: #fff;
+            border: none;
+            border-radius: 70px;
+            cursor: pointer;
+        }
+
+.search-bar:has(input:focus)
+        {
+            border: 2px solid #de55de;
+            box-shadow: 0 0 120px hsl(300 67% 60% / 0.5);
+            border-radius: 40px;
+        }
+
+.search-bar >svg
+        {
+            position: absolute;
+            right: 1rem;
+            width: 28px;
+            flex-shrink: 0;
+            transition: 0.25s;
+        }
+
+
+nav ul 
+        {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+nav li 
+        {
+            margin-right: 20px;
+        }
+
+nav a 
+        {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+nav a:hover 
+        {
+            color: red;
+        }
+
+p 
+        {
+            text-align: center;
+            font-size: 30px;
+            color: #333;
+            max-width: 600px;
+            font-weight: bold;
+            margin: 0 auto;
+        }
+
+nav ul li 
+        {
+            margin-right: 10px;
+        }
+
+#loginButton a 
+        {
+            display: block;
+            padding: 1px 10px;
+            text-decoration: none;
+            color: #181818;
+            background-color: #0cfaf6;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+#loginButton 
+        {
+            margin-right: 20px;
+        }
+
+#loginButton a:hover 
+        {
+            background-color: #0056b3;
+        }
+
+.highlight 
+        {
+            color: red;
+            font-weight: bold;
+        }
+
+.search-bar 
+        {
+            margin: 0 auto;
+        }
+
+#carListings 
+        {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+.carListing 
+        {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 15px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+.carListing:hover 
+        {
+            transform: scale(1.05);
+            background-color: #838282;
+            color: #3f3f3f;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+.carListing a,
+.carListing h3,
+.carListing p 
+        {
+            text-decoration: none; 
+            color: inherit;
+        }
+
+.carListing img 
+        {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+.carListing h3 
+        {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+.carListing p 
+        {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+.scroll-to-top 
+        {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 24px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            display: none;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+.scroll-to-top:hover 
+        {
+            background-color: darkred;
+        }
+
+@media screen and (max-width: 600px) 
+    {
+        header 
+            {
+                flex-direction: column;
+                align-items: center;
+            }
+
+        .header-content 
+            {
+                margin-bottom: 15px;
+            }
+
+        .carListing 
+            {
+                margin: 10px auto;
+            }
+    }

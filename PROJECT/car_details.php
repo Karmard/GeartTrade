@@ -1,0 +1,132 @@
+<?php
+// CHECKS WHICH USER IS CURRENTLY USING THE SYSTEM
+session_start();
+
+// RETRIEVE CAR DETAILS
+$vinNo = isset($_GET['vinNo']) ? $_GET['vinNo'] : '';
+$carName = isset($_GET['carName']) ? $_GET['carName'] : '';
+$price = isset($_GET['price']) ? $_GET['price'] : '';
+$transmission = isset($_GET['transmission']) ? $_GET['transmission'] : '';
+$mileage = isset($_GET['mileage']) ? $_GET['mileage'] : '';
+$username = isset($_GET['username']) ? $_GET['username'] : '';
+$frontimage = isset($_GET['frontimage']) ? $_GET['frontimage'] : '';
+$sideLeftimage = isset($_GET['sideLeftimage']) ? $_GET['sideLeftimage'] : '';
+$sideRightimage = isset($_GET['sideRightimage']) ? $_GET['sideRightimage'] : '';
+$backimage = isset($_GET['backimage']) ? $_GET['backimage'] : '';
+$dashboardimage = isset($_GET['dashboardimage']) ? $_GET['dashboardimage'] : '';
+$interiorimage = isset($_GET['interiorimage']) ? $_GET['interiorimage'] : '';
+$loggedIn = isset($_SESSION['UserID']);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details</title>
+    <link rel="stylesheet" href="details.css">
+    <link rel="stylesheet" href="slideshow.css">
+</head>
+<body>
+
+
+<header>
+        <div class="logo-container">
+            <a href="index.php">
+                <img src="images/WhatsApp_Image_2023-09-17_at_2.41.26_PM-removebg-preview.png" alt="Company Logo">
+            </a>
+        </div>
+        <h1>Gear Trade Hub</h1>
+
+
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="account.php">Account</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li id="loginButton"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="carDetails">
+        <div class="carDetail">
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <img src="<?php echo $frontimage; ?>" alt="<?php echo $carName; ?>">
+                </div>
+                <div class="mySlides">
+                    <img src="<?php echo $sideLeftimage; ?>" alt="Side Left">
+                </div>
+                <div class="mySlides">
+                    <img src="<?php echo $sideRightimage; ?>" alt="Side Right">
+                </div>
+                <div class="mySlides">
+                    <img src="<?php echo $backimage; ?>" alt="Back">
+                </div>
+                <div class="mySlides">
+                    <img src="<?php echo $dashboardimage; ?>" alt="Dashboard">
+                </div>
+                <div class="mySlides">
+                    <img src="<?php echo $interiorimage; ?>" alt="Interior">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <h2><?php echo $carName; ?></h2>
+            <div class="details-container">
+        <p>Price: Ksh.<?php echo $price; ?></p>
+        <p>Transmission: <?php echo $transmission; ?></p>
+        <p>Mileage: <?php echo $mileage; ?> Kilometers</p>
+        <p>Listed by: <?php echo $username; ?></p>
+    </div>
+        </div>
+
+
+        <div class="buttons">
+            <a href="index.php">Back</a>
+            <?php if ($loggedIn) 
+            { ?>
+                <a href="#" onclick="buyCar()">Buy</a>
+                <a href="#" onclick="reportCar()">Report</a>
+            <?php 
+        } ?>
+        </div>
+    </section>
+
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n)
+        {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) 
+        {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) 
+        {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) 
+            {
+                slideIndex = 1;
+            }
+            if (n < 1) 
+            {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) 
+            {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</body>
+</html>

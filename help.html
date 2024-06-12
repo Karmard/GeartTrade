@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help | Gear Trade Hub</title>
+    <link rel="stylesheet" href="STYLING/help.css">
+    <style>
+        footer 
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color:black;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .footer-hidden 
+        {
+            transform: translateY(100%);
+        }
+
+        .footer-visible 
+        {
+            transform: translateY(0);
+        }
+
+        @media screen and (max-width: 600px) 
+        {
+            footer 
+            {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <a href="index.php">
+            <img src="images/WhatsApp_Image_2023-09-17_at_2.41.26_PM-removebg-preview.png" alt="Company Logo">
+        </a>
+    </div>
+    <h1>How can We be of assistance?</h1>
+
+    <nav>
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="account.php">Account</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="contact">
+    <div class="left-section">
+        <h2>Contact Customer Care</h2>
+        <p>If you have any questions or need assistance, feel free to reach out to us through the following channels:</p>
+
+        <ul>
+            <li>WhatsApp: <a href="https://wa.me/+254768608064" target="_blank">Click to Chat on WhatsApp</a></li>
+            <li>Instagram: <a href="https://www.instagram.com/karmard_/" target="_blank">@geartradehub</a></li>
+            <li>Facebook: <a href="https://www.facebook.com/Tom Karma" target="_blank">Gear Trade Hub</a></li>
+            <li>Twitter: <a href="https://twitter.com/karmard_" target="_blank">@geartradehub</a></li>
+        </ul>
+    </div>
+
+            <div class="right-section">
+                <h3>Send us an Email</h3>
+                <form class="" action="send.php" method="post">
+                    Email <input type="email" name="email" value=""><br>
+                    Subject <input type="text" name="subject" value=""><br>
+                    Message <textarea name="message" rows="4" cols="50"></textarea><br>
+                    
+                    <button type="submit" name="send">Send</button>
+                </form>
+                
+
+            </div>
+
+</section>
+
+
+
+
+
+
+<footer id="footer" class="footer-hidden">
+    <p>© Gear Trade Hub 2024</p>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const footer = document.getElementById('footer');
+
+        function showFooter() {
+            footer.classList.remove('footer-hidden');
+            footer.classList.add('footer-visible');
+        }
+
+        function hideFooter() {
+            footer.classList.remove('footer-visible');
+            footer.classList.add('footer-hidden');
+        }
+
+        window.addEventListener('scroll', function () {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                showFooter();
+            } else {
+                hideFooter();
+            }
+        });
+
+        window.addEventListener('mousemove', function (event) {
+            const mouseY = event.clientY;
+            const windowHeight = window.innerHeight;
+
+            if (mouseY >= windowHeight - 10) {
+                showFooter();
+            } else {
+                hideFooter();
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>

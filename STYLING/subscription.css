@@ -1,0 +1,162 @@
+body 
+{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/subscription-8350728_1280.webp");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+.container 
+{
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h1
+{
+    color: white;
+}
+
+.plan-container 
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.plan, .plan2 
+{
+    flex: 0 1 calc(50% - 20px);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.plan2 
+{
+    margin-left: 10px;
+}
+
+.plan:hover, .plan2:hover 
+{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.plan h2, .plan2 h2 
+{
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.plan ul, .plan2 ul 
+{
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.plan ul li, .plan2 ul li 
+{
+    margin-bottom: 10px;
+}
+
+.plan button, .plan2 button 
+{
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 10px 20px;
+    background-color: #090a0b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.plan button:hover, .plan2 button:hover 
+{
+    background-color: #b30000;
+}
+
+#subscribeSection 
+{
+    text-align: center;
+    margin-top: 20px;
+}
+
+#subscribeSection h3 
+{
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #1ffc56;
+}
+
+#subscribeButton, #cancelSubscriptionButton 
+{
+    background-color: #c8686e;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+    display: inline-block;
+}
+
+#subscribeButton:hover, #cancelSubscriptionButton:hover 
+{
+    background-color: #f01e64;
+}
+
+#subscriptionStatus 
+{
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#payment_method_pro, #payment_method_plus 
+{
+    width: 200px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+#payment_method_pro option, #payment_method_plus option 
+{
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+#payment_method_pro:after, #payment_method_plus:after 
+{
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.caution-text 
+{
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}

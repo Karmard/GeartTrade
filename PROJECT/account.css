@@ -1,0 +1,332 @@
+body 
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #f5f5f5;
+    margin: 0;
+}
+
+header 
+{
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container img 
+{
+    max-width: 80px;
+    height: auto;
+    margin-right: 10px;
+}
+
+h1 
+{
+    margin: 0;
+    font-size: 24px;
+}
+
+.header-content 
+{
+    display: flex;
+    align-items: center;
+}
+
+.search-bar 
+{
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input
+{
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+}
+
+.search-bar button 
+{
+    padding: 10px 15px;
+    background-color:red;
+    color: #fff;
+    border: none;
+    border-radius: 70px;
+    cursor: pointer;
+}
+
+nav ul 
+{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li 
+{
+    margin-right: 20px;
+}
+
+nav a 
+{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover 
+{
+    color: red; 
+}
+
+p 
+{
+    text-align: center;
+    font-size: 30px;
+    color: #333;
+    max-width: 600px;
+    font-weight: bold;
+    margin: 0 auto; 
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+#loginButton a 
+{
+    display: block;
+    padding: 1px 10px;
+    text-decoration: none;
+    color: #181818; 
+    background-color: #0cfaf6;
+    border-radius: 8px;
+    transition: background-color 0.3s ease; 
+}
+
+#loginButton 
+{
+    margin-right: 20px;
+}
+
+
+#loginButton a:hover 
+{
+    background-color: #0056b3; 
+}
+
+
+.highlight 
+{
+    color: red;
+    font-weight: bold;
+}
+
+.search-bar 
+{
+    margin: 0 auto;
+}
+
+
+
+
+
+
+#listCarButton {
+    text-align: center;
+    margin: 5px 0; /* Add margin for spacing */
+}
+
+#listCarButton a {
+    text-decoration: none;
+}
+
+#listCarButton button {
+    padding: 5px 50px; /* Adjust padding for height and width */
+    font-size: 18px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#listCarButton button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+#accountPage {
+    max-width: 1200px; 
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#accountPage h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#accountPage h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 5px;
+}
+
+#accountPage section {
+    margin-bottom: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+#accountPage form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#accountPage label {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+#accountPage input,
+#accountPage button {
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#accountPage button {
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#accountPage button:hover {
+    background-color: #0056b3;
+}
+
+#accountPage p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#accountPage #deleteAccount button {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+#accountPage #deleteAccount button:hover {
+    background-color: #c82333;
+}
+
+
+
+
+/* Add this CSS to your stylesheet or create a new one */
+
+#listedCars {
+    max-width: 1500px; /* Adjust the max-width as needed */
+    margin: 0 auto;   /* Center the section horizontally */
+    overflow: hidden; /* Clear floats within the section */
+}
+
+.listedCarsHeader {
+    text-align: left; /* Align text to the left */
+}
+
+.carListingContainer {
+    text-align: center; /* Center the car listings */
+}
+
+.carListing {
+    width: 200px;     /* Adjust the width as needed */
+    margin: 0 10px 20px; /* Add space between individual car listings */
+    display: inline-block; /* Display elements in a row */
+    text-align: left; /* Align text to the left within each car listing */
+}
+
+.carListing img {
+    max-width: 100%;  /* Make sure images don't exceed the container width */
+    height: auto;
+    border: 1px solid #ddd; /* Add a border for better separation */
+}
+
+.carListing h4 {
+    margin: 10px 0;
+    font-size: 16px;  /* Adjust font size as needed */
+    text-align: center; /* Center the car name */
+}
+
+.carListing p {
+    margin: 5px 0;
+    font-size: 14px;  /* Adjust font size as needed */
+    text-align: center; /* Center the price */
+}
+
+
+
+
+
+.scroll-to-top 
+{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.scroll-to-top:hover 
+{
+    background-color: darkred;
+}
+
+
+
+@media screen and (max-width: 600px) 
+{
+    header 
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-content 
+    {
+        margin-bottom: 15px;
+    }
+}
