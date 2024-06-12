@@ -20,7 +20,8 @@ mysqli_close($connection);
 
 $users = array();
 
-while ($user = mysqli_fetch_assoc($resultUsers)) {
+while ($user = mysqli_fetch_assoc($resultUsers)) 
+{
     $users[] = $user;
 }
 

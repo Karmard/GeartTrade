@@ -6,56 +6,60 @@
     <title>Payment Method</title>
     <link rel="stylesheet" href="STYLING/payment.css">
     <style>
-        /* Your CSS styles */
-        /* payment.css */
+        .container 
+        {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
 
-.container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
+        h1 
+        {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
+        form 
+        {
+            display: flex;
+            flex-direction: column;
+        }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
+        label 
+        {
+            margin-bottom: 8px;
+        }
 
-label {
-    margin-bottom: 8px;
-}
+        select,
+        input[type="number"] 
+        {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            width: 100%;
+        }
 
-select,
-input[type="number"] {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    width: 100%;
-}
+        button[type="submit"] 
+        {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
 
-button[type="submit"] {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
-}
-
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
+        button[type="submit"]:hover 
+        {
+            background-color: #0056b3;
+        }
 
     </style>
 </head>
@@ -78,16 +82,17 @@ button[type="submit"]:hover {
     </div>
 
     <script>
-        // JavaScript code to adjust amount based on plan selection
-        document.getElementById('payment_method').addEventListener('change', function() {
+        document.getElementById('payment_method').addEventListener('change', function() 
+        {
             var selectedPlan = document.getElementById('plan').value;
             var amountInput = document.getElementById('amount');
-
-            // Set amount based on the selected plan
-            if (selectedPlan === 'plus') {
-                amountInput.value = '1000'; // Set amount for Plus Plan
-            } else if (selectedPlan === 'pro') {
-                amountInput.value = '1800'; // Set amount for Pro Plan
+            if (selectedPlan === 'plus') 
+            {
+                amountInput.value = '1000';
+            } 
+                else if (selectedPlan === 'pro') 
+            {
+                amountInput.value = '1800';
             }
         });
     </script>

@@ -32,7 +32,6 @@
                         $licence = $userDetails['licence'];
                         $certificate = $userDetails['certificate'];
 
-                        // Fetch cars listed by the user
                         $queryListedCars = "SELECT * FROM carreg WHERE UserID = ?";
                         $stmtListedCars = mysqli_prepare($connection, $queryListedCars);
                         mysqli_stmt_bind_param($stmtListedCars, "i", $userId);

@@ -100,7 +100,8 @@ setInterval(() =>{
           if(xhr.status === 200){
             let data = xhr.response;
             chatBox.innerHTML = data;
-            if(!chatBox.classList.contains("active")){
+            if(!chatBox.classList.contains("active"))
+            {
                 scrollToBottom();
               }
           }

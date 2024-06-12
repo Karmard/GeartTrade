@@ -65,7 +65,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Reset - Gear Trade Hub</title>
     <style>
-        body {
+        body 
+        {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -76,7 +77,8 @@
             overflow: hidden;
         }
 
-        .container {
+        .container 
+        {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -90,16 +92,19 @@
             padding: 20px;
         }
 
-        form {
+        form 
+        {
             text-align: center;
         }
 
-        label {
+        label 
+        {
             display: block;
             margin-bottom: 10px;
         }
 
-        input[type="email"] {
+        input[type="email"] 
+        {
             width: 100%;
             padding: 10px;
             margin-bottom: 20px;

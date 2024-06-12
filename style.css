@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-* {
+* 
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,7 +9,8 @@
   font-family: 'Poppins', sans-serif;
 }
 
-body {
+body 
+{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +19,8 @@ body {
   padding: 0 10px;
 }
 
-.wrapper {
+.wrapper 
+{
   background: #fff;
   max-width: 450px;
   width: 100%;
@@ -25,13 +28,14 @@ body {
   box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
 }
 
-/* Users List CSS Start */
-.users {
+.users 
+{
   padding: 25px 30px;
 }
 
 .users header,
-.users-list a {
+.users-list a 
+{
   display: flex;
   align-items: center;
   padding-bottom: 20px;
@@ -39,17 +43,20 @@ body {
   justify-content: space-between;
 }
 
-.wrapper img {
+.wrapper img 
+{
   object-fit: cover;
   border-radius: 50%;
 }
 
-.users header img {
+.users header img 
+{
   height: 50px;
   width: 50px;
 }
 
-:is(.users, .users-list) .content {
+:is(.users, .users-list) .content 
+{
   display: flex;
   align-items: center;
 }
@@ -166,7 +173,6 @@ body {
   color: #ccc;
 }
 
-/* Chat Area CSS Start */
 .chat-area header {
   display: flex;
   align-items: center;
@@ -290,7 +296,6 @@ body {
   pointer-events: auto;
 }
 
-/* Responive media query */
 @media screen and (max-width: 450px) {
   .form,
   .users {

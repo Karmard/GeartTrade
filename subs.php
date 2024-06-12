@@ -8,7 +8,8 @@ define('CONSUMER_SECRET', 'EqeYAAZQ1lj8V0psSeHnqdmAG3gCaxvvpiKoArB0a6BqUQnUMo1Dq
 define('SHORTCODE', 'N/A');
 define('PASSKEY', '123321@@Tb');
 
-function getAccessToken() {
+function getAccessToken() 
+{
     $url = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
 
     $credentials = base64_encode(CONSUMER_KEY . ':' . CONSUMER_SECRET);
@@ -31,7 +32,8 @@ function getAccessToken() {
     return $data['access_token'];
 }
 
-function lipaNaMpesa($amount, $phone_number) {
+function lipaNaMpesa($amount, $phone_number) 
+{
     $access_token = getAccessToken();
     $url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
     $timestamp = date('YmdHis');
@@ -65,7 +67,8 @@ function lipaNaMpesa($amount, $phone_number) {
     return json_decode($response, true);
 }
 
-if (!isset($_SESSION['UserID'])) {
+if (!isset($_SESSION['UserID'])) 
+{
     header("Location: login.php");
     exit;
 }
@@ -82,19 +85,26 @@ $subscription = $userSubscribed ? $result_subscription->fetch_assoc() : null;
 
 $plan = $userSubscribed ? $subscription['plan'] : "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['plan'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+    if (isset($_POST['plan'])) 
+    {
         $selected_plan = $_POST['plan'];
         $selected_payment_method = $_POST['payment_method'];
         $phone_number = $_POST['phone_number']; 
 
-        if ($selected_plan === 'plus') {
+        if ($selected_plan === 'plus') 
+        {
             $plan = "Plus Plan";
             $price = 1000;
-        } elseif ($selected_plan === 'pro') {
+        }
+         elseif ($selected_plan === 'pro') 
+        {
             $plan = "Pro Plan";
             $price = 1800;
-        } else {
+        } 
+        else 
+        {
             echo "Invalid plan selected.";
             exit;
         }
@@ -113,13 +123,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt = $connection->prepare($sql);
                 $stmt->bind_param("ssssss", $adminUserID, $selected_plan, $start_date, $end_date, $price, $transaction_id);
 
-                if ($stmt->execute()) {
+                if ($stmt->execute()) 
+                {
                     echo '<script>window.location.href = "account.php";</script>';
                     exit;
-                } else {
+                } 
+                else 
+                {
                     echo "Error adding subscription: " . $stmt->error;
                 }
-            } else {
+            } 
+            else 
+            {
                 echo '<script>alert("Error initiating payment: ' . $mpesa_response['errorMessage'] . '");</script>';
             }
         } 
@@ -128,16 +143,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    if (isset($_POST['cancel_subscription'])) {
+    if (isset($_POST['cancel_subscription'])) 
+    {
         $sql = "UPDATE subscription SET end_date = CURDATE() WHERE UserID = ? AND end_date >= CURDATE()";
         $stmt = $connection->prepare($sql);
         $stmt->bind_param("s", $adminUserID);
 
-        if ($stmt->execute()) {
+        if ($stmt->execute()) 
+        {
             echo '<script>alert("Subscription cancelled successfully.");</script>';
             echo '<script>window.location.href = "account.php";</script>';
             exit;
-        } else {
+        } 
+        else 
+        {
             echo "Error cancelling subscription: " . $stmt->error;
         }
     }
